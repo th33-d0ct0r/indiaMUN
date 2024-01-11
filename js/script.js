@@ -1,6 +1,6 @@
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry)
+        // console.log(entry)
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
         } else {
@@ -21,17 +21,22 @@ contactUsButton.addEventListener('click', async (e) => {
         subject: "Aarav is not a good developer",
         text: "Bhai aarav ko sahi me kuchh nahi ata lmao"
     }
-    const response = await fetch("http://localhost:5000/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: data,
-    });
-
-    if (response.success) {
-        console.log("Successfully sent")
-    } else {
-        console.log("Error: ", response.msg)
+    try {
+        const response = await fetch("https://india-mun-backend.onrender.com/email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        //   mode: "no-cors",
+          body: JSON.stringify({
+            "userEmail": "groverbhavit@gmail.com",
+            "subject": "whatever",
+            "text": "asdasdasasd"
+          }),
+        });
+        console.log(JSON.stringify(data))
+        console.log("success")
+    } catch (error) {
+        console.log(error)
     }
 })
