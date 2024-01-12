@@ -13,33 +13,37 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden')
 hiddenElements.forEach((element) => observer.observe(element));
 
-const contactUsButton = document.getElementById('btn')
-contactUsButton.addEventListener('click', async (e) => {
+async function sendData(e) {
     e.preventDefault();
+    const email = document.getElementById("email").value
+    const subject = document.getElementById("subject").value
+    const text = document.getElementById("text").value
+    if (!email || !subject || !text) {
+      return alert("Please enter all the details.")
+    }
+    console.log(email, subject,text)
     const data = {
-        userEmail: "groverbhavit@gmail.com",
-        subject: "Aarav is not a good developer",
-        text: "Bhai aarav ko sahi me kuchh nahi ata lmao"
+        "userEmail": email,
+        "subject": subject,
+        "text": text
     }
     try {
-        const response = await fetch("https://india-mun-backend.onrender.com/email", {
+        const response = await fetch("https://indiamun-backend.onrender.com/email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
         //   mode: "no-cors",
-          body: JSON.stringify({
-            "userEmail": "groverbhavit@gmail.com",
-            "subject": "whatever",
-            "text": "asdasdasasd"
-          }),
+          body: JSON.stringify(data),
         });
         console.log(JSON.stringify(data))
         console.log("success")
-    } catch (error) {
+        alert("Emails sent successfully. Check your inbox for confirmation")
+      } catch (error) {
         console.log(error)
+        alert("There was an error in sending the emails. Please try again later.")
     }
-})
+}
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
