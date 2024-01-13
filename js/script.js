@@ -1,3 +1,14 @@
+window.onload = async () => {
+  try {
+    const response = await fetch("https://indiamun-backend.onrender.com/chalja/12ka4", {
+      method: "GET"
+    })
+    console.log("backend initiated")
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         // console.log(entry)
@@ -73,3 +84,17 @@ document.getElementsByClassName("specialText").onmouseover = event => {
     iteration += 1 / 3;
   }, 30);
 }
+
+const hamburger = document.getElementById("hamburger")
+const hamburgerMenu = document.getElementById("hamburgerMenu")
+hamburger.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log(hamburgerMenu.classList)
+  if (hamburgerMenu.classList.contains("phone-nav-menu-visible")) {
+    hamburgerMenu.classList.add("phone-nav-menu-hidden")
+    hamburgerMenu.classList.remove("phone-nav-menu-visible")
+  } else {
+    hamburgerMenu.classList.add("phone-nav-menu-visible")
+    // hamburgerMenu.classList.remove("phone-nav-menu-visible")
+  }
+})

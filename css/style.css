@@ -666,3 +666,68 @@ svg {
   height: 2vw;
   /* aspect-ratio: 1; */
 }
+
+.phone-nav {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 601px) {
+  .phone-nav-menu-hidden {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .phone-nav {
+    display: flex;
+    /* padding: 0; */
+    /* margin: 0; */
+    height: 15vh;
+  }
+  .phone-nav > .nav-logo > a > img {
+    width: 20vw;
+    margin-left: 12vw;
+  }
+  nav {
+    display: none;
+  }
+  .hamburger {
+    width: 10vw;
+    height: 10vw;
+  }
+  .new-btn {
+    margin-right: 12vw;
+    border-radius: 5px;
+    background: #ad0072;
+    width: 15vw;
+    aspect-ratio: 1;
+  }
+  .phone-nav-menu-hidden {
+    opacity: 0;
+    /* display: none; */
+    position: absolute;
+    top: -100vh;
+    transition: all 500ms ease;
+  }
+  .phone-nav-menu-visible {
+    position: absolute;
+    top: 18vh;
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 40vh;
+    z-index: 1000;
+    background: #18181B;
+  }
+  .phone-nav-menu-visible > li {
+    color: white;
+    list-style-type: none;
+  }
+}
