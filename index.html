@@ -28,10 +28,14 @@
 
     <ul class="nav-links">
       <li class="link"><a href="#">Home</a></li>
+      <li class="link" style="color: white; margin: 0;">|</li>
       <li id="link1" class="link"><a href="#" onclick="document.getElementById('whyUs').scrollIntoView({behavior: 'smooth'})">Why Us</a></li>
+      <li class="link" style="color: white; margin: 0;">|</li>
       <li id="link2" class="link"><a href="#" onclick="document.getElementById('committees').scrollIntoView({behavior: 'smooth'})">Committees</a></li>
+      <li class="link" style="color: white; margin: 0;">|</li>
       <li id="link3" class="link"><a href="#" onclick="document.getElementById('partners').scrollIntoView({behavior: 'smooth'})">Partners</a></li>
-      <li id="link3" class="link"><a href="#" onclick="document.getElementById('note').scrollIntoView({behavior: 'smooth'})">Note From Founder</a></li>
+      <li class="link" style="color: white; margin: 0;">|</li>
+      <li id="link3" class="link"><a href="#" onclick="document.getElementById('note').scrollIntoView({behavior: 'smooth'})">Our Legacy</a></li>
   </ul>
   <a class="btn-a" href="#" onclick="document.getElementById('contactUs').scrollIntoView({behavior: 'smooth'})" style="text-decoration: none;"><button style="color: #fff;" class="btn">Contact Us</button></a>
   </nav>
@@ -39,7 +43,7 @@
   <div class="slidesContainer" id="slidesContainer">
     <div class="slide activeSlide" id="slide1">
         <h1><span class="specialText" style="font-weight: 900;" data-value="INDIA MUN">INDIA MUN</span> 2024</h1>
-        <h2>India's Largest Online MUN!</h2>
+        <h2>India's Largest MUN!</h2>
         <a href="https://linktr.ee/indiamun" target="_blank" class="slidesBtn">APPLY NOW!</a>
         <div class="circles">
             <div class="circle slide1Circle" onclick="goToSlide('slide1', true)"></div>
@@ -51,7 +55,7 @@
     </div>
     <div class="slide" id="slide2" style="background-image: url('./images/WebsiteCover.png')">
         <h1><span class="specialText" style="font-weight: 900;" data-value="INDIA MUN">INDIA MUN</span> 2024</h1>
-        <h2>Diverse Communities</h2>
+        <h2>Take Part in India’s National Online MUN</h2>
         <a href="https://linktr.ee/indiamun" target="_blank" class="slidesBtn">APPLY NOW!</a>
         <div class="circles">
             <div class="circle slide1Circle" onclick="goToSlide('slide1', true)"></div>
@@ -63,7 +67,7 @@
     </div>
     <div class="slide" id="slide3" style="background-image: url('./images/WebsiteCover.png')">
         <h1><span class="specialText" style="font-weight: 900;" data-value="INDIA MUN">INDIA MUN</span> 2024</h1>
-        <h2>Global Perspective</h2>
+        <h2>Our Country, Our Voice, Our MUN</h2>
         <a href="https://linktr.ee/indiamun" target="_blank" class="slidesBtn">APPLY NOW!</a>
         <div class="circles">
             <div class="circle slide1Circle" onclick="goToSlide('slide1', true)"></div>
@@ -75,7 +79,7 @@
     </div>
     <div class="slide" id="slide4" style="background-image: url('./images/WebsiteCover.png')">
         <h1><span class="specialText" style="font-weight: 900;" data-value="INDIA MUN">INDIA MUN</span> 2024</h1>
-        <h2>Inspiring Thoughts</h2>
+        <h2>This time, debate for India!</h2>
         <a href="https://linktr.ee/indiamun" target="_blank" class="slidesBtn">APPLY NOW!</a>
         <div class="circles">
             <div class="circle slide1Circle" onclick="goToSlide('slide1', true)"></div>
@@ -87,7 +91,7 @@
     </div>
     <div class="slide" id="slide5" style="background-image: url('./images/WebsiteCover.png')">
         <h1><span class="specialText" style="font-weight: 900;" data-value="INDIA MUN">INDIA MUN</span> 2024</h1>
-        <h2>SLIDE 5</h2>
+        <h2>India Model United Nations 2024 🚀</h2>
         <a href="https://linktr.ee/indiamun" target="_blank" class="slidesBtn">APPLY NOW!</a>
         <div class="circles">
             <div class="circle slide1Circle" onclick="goToSlide('slide1', true)"></div>
@@ -181,15 +185,15 @@
     <div class="partnerContainer hidden">
         <div class="partner hidden">
             <img src="./images/dublieu.png" alt="">
-            <h1><span style="font-weight: 700;">Dublieu:</span> Media and Public Relations Partner</h1>
+            <h1><span style="font-weight: 700;">Dublieu:</span> Lorem ipsum dolor sit amet.</h1>
         </div>
         <div class="partner hidden">
             <img src="./images/kamakhya.png" alt="">
-            <h1><span style="font-weight: 700;">Project Kamakhya:</span> Sustainability Partner</h1>
+            <h1><span style="font-weight: 700;">Project Kamakhya:</span> Lorem ipsum dolor sit.</h1>
         </div>
         <div class="partner hidden">
             <img src="./images/spectertech.png" alt="">
-            <h1><span style="font-weight: 700;">SpecterTech:</span> Software Partner</h1>
+            <h1><span style="font-weight: 700;">SpecterTech:</span> Lorem ipsum dolor sit amet.</h1>
         </div>
     </div>
 </div>
@@ -243,13 +247,8 @@
 
 </body>
 <script>
-    // This code: smash or pass?
     var currentSlide = 1;
     window.onload = () => {
-        // Because the slides are positioned absolutely, the container 
-        // takes up zero space by default. So, in order to ensure proper
-        // flow of the page, we need to make the container takes up
-        // proper space.
 
         const slideRect = document.getElementById('slide1').getBoundingClientRect()
         const slideHeight = slideRect.height

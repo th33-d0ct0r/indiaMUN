@@ -43,7 +43,7 @@ nav{
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 2vw;
 }
 
 .link a{
