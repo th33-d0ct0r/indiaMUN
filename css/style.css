@@ -533,11 +533,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1vw;
+  gap: 1.5vw;
 }
 
 .partner > img {
-  width: 20vw;
+  width: 15vw;
   /* aspect-ratio: 1; */
   border-radius: 10px;
 }
@@ -545,6 +545,11 @@ body {
 .partner > h1 {
   text-align: center;
   color: #fff;
+}
+
+.partner > p {
+  color: #fff;
+  text-align: center;
 }
 
 .footer {
