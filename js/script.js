@@ -1,4 +1,5 @@
 window.onload = async () => {
+  document.getElementsByClassName('dropdown')[0].style.left = document.getElementById('homeLink').getBoundingClientRect().left + 'px'
   try {
     const response = await fetch("https://indiamun-backend.onrender.com/chalja/12ka4", {
       method: "GET"
@@ -6,6 +7,12 @@ window.onload = async () => {
     console.log("backend initiated")
   } catch (error) {
     console.log(error)
+  }
+}
+
+document.body.onclick = (e) => {
+  if (e.target !== document.getElementsByClassName('dropdown')[0]) {
+    document.getElementsByClassName('dropdown')[0].style.transform = 'scale(1, 0)'
   }
 }
 
@@ -208,7 +215,6 @@ const adjustLastMousePosition = position => {
 
 const handleOnMove = e => {
   const mousePosition = { x: e.pageX, y: e.pageY }
-  console.log(e)
 
   adjustLastMousePosition(mousePosition);
 
@@ -232,3 +238,7 @@ window.onmousemove = e => handleOnMove(e);
 window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 document.body.onmouseleave = () => updateLastMousePosition(originPosition);
+
+function showInternalLinks() {
+  document.getElementsByClassName('dropdown')[0].style.transform = 'scale(1, 1)'
+}
